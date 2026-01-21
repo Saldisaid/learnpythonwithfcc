@@ -65,16 +65,69 @@
 # except ValueError as e:
 #     print(f"Handled at higher level: {e}")
 
-class InsufficientFundsError(Exception):
-    def __init__(self, balance, amount):
-        self.balance = balance
-        self.amount = amount
-        super().__init__(f"Insufficient funds: Available balance is {balance}, attempted withdrawal is {amount}.")
+# class InsufficientFundsError(Exception):
+#     def __init__(self, balance, amount):
+#         self.balance = balance
+#         self.amount = amount
+#         super().__init__(f"Insufficient funds: Available balance is {balance}, attempted withdrawal is {amount}.")
 
-def withdraw(balance, amount):
-    if amount > balance:
-        raise InsufficientFundsError(balance, amount)
-    return balance - amount
+# def withdraw(balance, amount):
+#     if amount > balance:
+#         raise InsufficientFundsError(balance, amount)
+#     return balance - amount
+
+# try:
+#     new_balance = withdraw(100, 150)
+# except InsufficientFundsError as ife:
+#     print(f"Error: {ife}")
+
+# def parse_config(filename):
+#     try:
+#         with open(filename, 'r') as f:
+#             data = f.read()
+#             return int(data)
+#     except FileNotFoundError as fn:
+#         raise ValueError("Configuration file not found.") from None
+#     except ValueError as ve:
+#         raise ValueError("Invalid configuration data.") from ve
+
+# config = parse_config('config.txt')
+
+def calculate_square_root(number):
+    assert number >= 0, "Cannot calculate square root of negative number."
+    return number ** 0.5
+
+try:
+    result = calculate_square_root(-4)
+except AssertionError as ae:
+    print(f"AssertionError: {ae}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
