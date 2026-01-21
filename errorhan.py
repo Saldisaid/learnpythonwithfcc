@@ -42,15 +42,69 @@
 # except (ValueError, ZeroDivisionError) as e:
 #     print(f"An error occurred: {e}")
 
-def check_age(age):
-    if age < 0:
-        raise ValueError("Age cannot be negative.")
-    return age
+# def check_age(age):
+#     if age < 0:
+#         raise ValueError("Age cannot be negative.")
+#     return age
 
-try:
-    check_age(-5)
-except ValueError as ve:
-    print(f"Caught an exception: {ve}")
+# try:
+#     check_age(-5)
+# except ValueError as ve:
+#     print(f"Caught an exception: {ve}")
+
+# def process_data(data):
+#     try:
+#         result = int(data)
+#         return result * 2
+#     except ValueError as ve:
+#         print("Logging: Invalid data provided.")
+#         raise
+
+# try:
+#     process_data('abc')
+# except ValueError as e:
+#     print(f"Handled at higher level: {e}")
+
+class InsufficientFundsError(Exception):
+    def __init__(self, balance, amount):
+        self.balance = balance
+        self.amount = amount
+        super().__init__(f"Insufficient funds: Available balance is {balance}, attempted withdrawal is {amount}.")
+
+def withdraw(balance, amount):
+    if amount > balance:
+        raise InsufficientFundsError(balance, amount)
+    return balance - amount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
