@@ -198,31 +198,42 @@
 #         print(f'{attr}: {getattr(product_a, attr)}')
         
 
-# ## delattr
+# # ## delattr
 
-class UserSession:
-    def __init__(self, user_id, token):
-        self.user_id = user_id
-        self.auth_token = token
-        self.temp_counter = 0
+# class UserSession:
+#     def __init__(self, user_id, token):
+#         self.user_id = user_id
+#         self.auth_token = token
+#         self.temp_counter = 0
 
-session = UserSession(101, 'a1b2c3d4e5')
+# session = UserSession(101, 'a1b2c3d4e5')
 
-attr_to_clean = ['auth_token', 'temp_counter']
+# attr_to_clean = ['auth_token', 'temp_counter']
 
-for attr in attr_to_clean:
-    if hasattr(session, attr):
-        delattr(session, attr)
-        print(f'Removed attribute: {attr}')
-
-
-for attr in dir(session):
-    if not attr.startswith('__') and not callable(getattr(session, attr)):
-        print(f' - {attr}: {getattr(session, attr)}')
+# for attr in attr_to_clean:
+#     if hasattr(session, attr):
+#         delattr(session, attr)
+#         print(f'Removed attribute: {attr}')
 
 
+# for attr in dir(session):
+#     if not attr.startswith('__') and not callable(getattr(session, attr)):
+#         print(f' - {attr}: {getattr(session, attr)}')
 
 
+
+class Menu:
+    dish_of_the_day = "spam"
+
+print(Menu.dish_of_the_day)
+
+class Dog:
+    def __init__(name, age):
+        self.name = name
+        self.age = age
+
+dog = Dog("Pinky", 3)
+print(dog.name)
 
 
 
