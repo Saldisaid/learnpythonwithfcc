@@ -4,7 +4,7 @@ class GameCharacter:
         self._health = 100
         self._mana = 50
         self._level = 1
-
+        
     # NAME (read only)
     @property
     def name(self):
